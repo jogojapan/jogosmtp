@@ -1,0 +1,6 @@
+services:
+  smtp-proxy:
+    image: jogojapan/jogosmtp
+    env_file: stack.env
+    ports:
+      - "1035:1025"
