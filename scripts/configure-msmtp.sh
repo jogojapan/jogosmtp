@@ -13,6 +13,7 @@ tls on
 tls_starttls on
 tls_certcheck on
 auth on
+from = ${SES_SENDER_MAIL_ADDRESS}
 EOF
 
 # Set proper permissions for the config file
