@@ -7,5 +7,5 @@ echo "Starting SMTP proxy on port ${SMTP_PROXY_PORT}"
 
 # Start socat to listen for SMTP connections and pipe them to msmtp
 exec socat \
-    TCP4-LISTEN:${SMTP_PROXY_PORT},fork,reuseaddr \
-    EXEC:"/usr/bin/msmtp --read-envelope-from --read-recipients"
+  TCP4-LISTEN:1025,fork,reuseaddr,crlf \
+  EXEC:"msmtp -t 30 --read-envelope-from --read-recipients"
